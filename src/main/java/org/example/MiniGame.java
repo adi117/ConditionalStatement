@@ -5,10 +5,13 @@ import java.util.Scanner;
 public class MiniGame {
     public static String guestTheNumber(){
         double number = randomNumber();
-        Scanner scanner = new Scanner(System.in);
-        boolean isGameContinue = true;
         double numberGuess;
+        boolean isGameContinue = true;
+
+        int userAttempt = 0;
+
         String gameResult = new String();
+        Scanner scanner = new Scanner(System.in);
 
         System.out.println("Guess the number between 1 - 99!");
 
@@ -21,10 +24,13 @@ public class MiniGame {
             } else if(numberGuess > number){
                 System.out.println("Too high!");;
             } else {
-                scanner.close();
                 isGameContinue = false;
-                gameResult =  "Gotcha! The number is " + number;
+                gameResult =  "Gotcha! Your attempts to guess is " + userAttempt + " attempts";
+                scanner.close();
             }
+
+            userAttempt += 1;
+
         } while (isGameContinue);
         return gameResult;
     }

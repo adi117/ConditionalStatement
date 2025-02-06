@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
+import java.util.Arrays;
 import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -38,6 +39,12 @@ class PrinterTest {
         Scanner scanner = new Scanner(inputStream);
 
         assertEquals("1,2,3,", Printer.inputNumberIteration(scanner));
+    }
+
+    @Test
+    @DisplayName("Swap Character Case")
+    void testSwapCharacterCase(){
+        assertEquals("tHE qUIcK bRoWn fOX", Printer.swapCharacterCase("The QuiCk BrOwN Fox"));
     }
 
 }

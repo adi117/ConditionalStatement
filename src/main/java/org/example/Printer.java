@@ -66,5 +66,29 @@ public class Printer {
 
     }
 
+    public static String swapCharacterCase(String text){
+        String upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String lower = "abcdefghijklmnopqrstuvwxyz";
+
+        String[] arrayUpper = upper.split("");
+        String[] arrayLower = lower.split("");
+        String[] arrayText = text.split("");
+        String[] swappedText = arrayText;
+
+        for (int i = 0; i < arrayText.length; i++){
+            for (int j = 0; j < arrayUpper.length; j++){
+                if (arrayText[i].equals(arrayUpper[j])){
+                    swappedText[i] = arrayLower[j];
+                    break;
+                } else if (arrayText[i].equals(arrayLower[j])){
+                    swappedText[i] = arrayUpper[j];
+                    break;
+                }
+            }
+        }
+
+        return String.join("", swappedText);
+
+    }
 
 }
