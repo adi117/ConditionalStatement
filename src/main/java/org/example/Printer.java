@@ -67,6 +67,11 @@ public class Printer {
     }
 
     public static String swapCharacterCase(String text){
+
+        if (text.length() < 1){
+            throw new IllegalArgumentException("Input cannot be blank!");
+        }
+
         String upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String lower = "abcdefghijklmnopqrstuvwxyz";
 
